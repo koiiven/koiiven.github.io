@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>宮古島行程 · 纓寶公主生日慶祝之旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B2027;
+    --lagoon:#22B8AE;
+    --reef:#1C7C8C;
+    --deep:#0E3A53;
+    --deep2:#0A2740;
+    --sand:#F6F1E2;
+    --sand2:#EFE7D2;
+    --card:#FFFFFF;
+    --coral:#FF6B4A;
+    --leaf:#3F9463;
+    --leaf-bg:#E4F2E8;
+    --warn:#C1501F;
+    --warn-bg:#FCEAE0;
+    --line:rgba(11,32,39,0.12);
+    --shadow: 0 18px 40px -22px rgba(10,39,64,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:"Noto Sans TC","Noto Serif TC",sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Bricolage Grotesque","Noto Serif TC",sans-serif;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  .num{font-family:"Space Grotesk",monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .topnav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,241,226,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:16px;}
+  .brand{font-family:"Bricolage Grotesque";font-weight:800;font-size:15px;letter-spacing:0.06em;}
+  .brand span{color:var(--reef);}
+  .navlinks{display:flex;gap:22px;font-size:13.5px;font-weight:600;overflow-x:auto;scrollbar-width:none;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{white-space:nowrap;text-decoration:none;opacity:0.72;padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+  .navlinks a:hover{opacity:1;border-color:var(--coral);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(120% 140% at 15% -10%, #1E7A82 0%, var(--deep) 46%, var(--deep2) 100%);
+    color:#EAF6F3;
+    padding:76px 0 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto 0 0 0;height:120px;
+    background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.06));
+  }
+  .eyebrow{
+    font-family:"Space Grotesk";font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;
+    color:#8FE0D6;margin-bottom:18px;display:flex;gap:10px;align-items:center;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:#8FE0D6;display:inline-block;}
+  .hero h1{font-size:clamp(38px,7vw,66px);font-weight:800;line-height:1.05;}
+  .hero .sub{font-family:"Noto Serif TC";font-weight:500;font-size:clamp(16px,2.4vw,20px);color:#CFE9E5;margin-top:14px;max-width:640px;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:30px;}
+  .pill{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
+    padding:8px 14px;border-radius:30px;font-size:13px;font-weight:600;
+    display:flex;align-items:center;gap:6px;
+  }
+  .pill b{color:#8FE0D6;font-family:"Space Grotesk";}
+
+  /* tide gradient legend */
+  .tide{margin-top:36px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .tide-bar{height:8px;flex:1;min-width:220px;border-radius:6px;
+    background:linear-gradient(90deg,#5FE0CE 0%, #22B8AE 20%, #1C7C8C 45%, #145C74 68%, #0E3A53 88%, #0A2740 100%);
+  }
+  .tide-label{font-size:12px;color:#B9DEDA;font-family:"Space Grotesk";white-space:nowrap;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:64px 0;}
+  .sec-head{margin-bottom:34px;}
+  .sec-eyebrow{font-family:"Space Grotesk";font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--reef);font-weight:700;margin-bottom:8px;}
+  .sec-title{font-size:clamp(26px,4vw,36px);font-weight:800;}
+  .sec-desc{margin-top:10px;color:rgba(11,32,39,0.65);font-size:14.5px;max-width:640px;}
+
+  /* ---------- OVERVIEW STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .stat{background:var(--card);padding:26px 20px;}
+  .stat .n{font-family:"Space Grotesk";font-size:32px;font-weight:700;color:var(--reef);}
+  .stat .l{font-size:12.5px;color:rgba(11,32,39,0.6);margin-top:4px;}
+  .route{margin-top:26px;font-family:"Noto Serif TC";font-weight:600;font-size:16px;color:var(--deep);letter-spacing:0.02em;}
+  .route .arrow{color:var(--coral);margin:0 8px;}
+
+  .diet-note{
+    margin-top:26px;background:#FFF6E0;border:1px solid rgba(196,144,10,0.25);
+    border-radius:14px;padding:16px 20px;font-size:13.5px;color:#8A5E06;display:flex;gap:10px;align-items:flex-start;
+  }
+  .diet-note b{color:#B4790A;}
+
+  /* ---------- DAY TABS ---------- */
+  .daytabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:30px;scrollbar-width:none;}
+  .daytabs::-webkit-scrollbar{display:none;}
+  .daytab{
+    flex:none;cursor:pointer;user-select:none;
+    padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);
+    font-family:"Space Grotesk";font-size:13px;font-weight:700;color:var(--ink);opacity:0.55;
+    transition:.2s;white-space:nowrap;
+  }
+  .daytab .d{display:block;font-size:10.5px;font-weight:500;opacity:0.7;font-family:"Noto Sans TC";margin-top:2px;}
+  .daytab.active{opacity:1;color:#fff;border-color:transparent;}
+
+  .daycard{display:none;}
+  .daycard.active{display:block;animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  .day-head{display:flex;align-items:baseline;gap:16px;margin-bottom:6px;flex-wrap:wrap;}
+  .day-num{font-family:"Space Grotesk";font-size:15px;font-weight:700;padding:4px 12px;border-radius:8px;color:#fff;}
+  .day-title{font-family:"Noto Serif TC";font-weight:700;font-size:22px;}
+  .day-date{font-size:13px;color:rgba(11,32,39,0.55);}
+  .day-loc{margin-top:2px;margin-bottom:22px;font-size:13.5px;color:var(--reef);font-weight:600;}
+
+  .timeline{border-left:2px solid var(--line);margin-left:6px;}
+  .tl-item{position:relative;padding:0 0 22px 24px;}
+  .tl-item::before{
+    content:"";position:absolute;left:-6.5px;top:5px;width:11px;height:11px;border-radius:50%;
+    background:var(--card);border:2.5px solid var(--reef);
+  }
+  .tl-item.booked::before{background:var(--reef);}
+  .tl-time{font-family:"Space Grotesk";font-size:13px;font-weight:700;color:var(--deep);}
+  .tl-body{margin-top:3px;font-size:14.5px;}
+  .tl-body a{text-decoration:none;border-bottom:1px solid rgba(11,32,39,0.25);}
+  .tl-body a:hover{border-color:var(--coral);color:var(--coral);}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle;}
+  .tag.book{background:var(--leaf-bg);color:var(--leaf);}
+  .tag.warn{background:var(--warn-bg);color:var(--warn);}
+  .tl-sub{margin-top:4px;font-size:12.5px;color:rgba(11,32,39,0.55);}
+
+  /* ---------- SPOTS / FOOD grid ---------- */
+  .glist{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  .gday{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow);}
+  .gday h4{font-size:13px;font-family:"Space Grotesk";color:var(--reef);margin-bottom:12px;}
+  .glinks{display:flex;flex-wrap:wrap;gap:8px;}
+  .glinks a{
+    font-size:12.5px;text-decoration:none;background:var(--sand2);padding:6px 11px;border-radius:20px;
+    border:1px solid var(--line);transition:.2s;
+  }
+  .glinks a:hover{background:var(--deep);color:#fff;border-color:var(--deep);}
+
+  /* ---------- EXPENSES ---------- */
+  .exp-summary{
+    display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:26px;
+  }
+  .exp-total .l{font-size:12.5px;color:rgba(11,32,39,0.55);}
+  .exp-total .n{font-family:"Space Grotesk";font-size:26px;font-weight:700;color:var(--deep);line-height:1.3;}
+  .exp-pending{font-size:12.5px;color:var(--warn);background:var(--warn-bg);padding:6px 12px;border-radius:20px;font-weight:600;}
+  .exp-bar{flex:1;min-width:220px;height:14px;border-radius:8px;overflow:hidden;display:flex;background:var(--sand2);}
+  .exp-bar span{height:100%;}
+  .exp-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;width:100%;}
+  .exp-legend .li{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(11,32,39,0.6);}
+  .exp-legend .dot{width:9px;height:9px;border-radius:50%;}
+
+  .exp-table{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+  .exp-row{
+    display:grid;grid-template-columns:1.4fr 1fr 100px 110px;align-items:center;
+    padding:15px 24px;border-bottom:1px solid var(--line);gap:10px;
+  }
+  .exp-row:last-child{border-bottom:none;}
+  .exp-row.head{background:var(--sand2);font-size:11.5px;font-weight:700;color:var(--reef);letter-spacing:0.04em;text-transform:uppercase;font-family:"Space Grotesk";padding:12px 24px;}
+  .exp-cat{font-size:13.5px;font-weight:600;}
+  .exp-item{font-size:13px;color:rgba(11,32,39,0.65);}
+  .exp-amt{font-family:"Space Grotesk";font-size:14px;font-weight:700;text-align:right;}
+  .exp-amt.pending{color:rgba(11,32,39,0.35);}
+  .exp-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;text-align:center;white-space:nowrap;justify-self:end;}
+  .exp-status.confirmed{background:var(--leaf-bg);color:var(--leaf);}
+  .exp-status.pending{background:var(--warn-bg);color:var(--warn);}
+  @media(max-width:600px){
+    .exp-row{grid-template-columns:1fr;gap:4px;padding:14px 18px;}
+    .exp-row.head{display:none;}
+    .exp-status{justify-self:start;}
+    .exp-amt{text-align:left;}
+  }
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  .cl-group{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);}
+  .cl-group h4{font-size:15px;margin-bottom:14px;font-family:"Noto Serif TC";}
+  .cl-group ul{list-style:none;margin:0;padding:0;}
+  .cl-group li{
+    padding:7px 0 7px 26px;position:relative;font-size:13.5px;border-bottom:1px dashed var(--line);
+  }
+  .cl-group li:last-child{border-bottom:none;}
+  .cl-group li::before{
+    content:"";position:absolute;left:0;top:10px;width:14px;height:14px;border:1.5px solid var(--reef);border-radius:4px;
+  }
+
+  /* ---------- NOTES ---------- */
+  .notes{display:flex;flex-direction:column;gap:14px;}
+  .note{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;
+    display:flex;gap:16px;align-items:flex-start;box-shadow:var(--shadow);
+  }
+  .note .n-ico{
+    flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-family:"Space Grotesk";font-weight:700;font-size:13px;color:#fff;background:var(--reef);
+  }
+  .note.warn .n-ico{background:var(--coral);}
+  .note h5{font-size:14.5px;margin-bottom:4px;}
+  .note p{margin:0;font-size:13.5px;color:rgba(11,32,39,0.68);}
+  .note p a{color:var(--reef);text-decoration:none;border-bottom:1px solid rgba(28,124,140,0.35);font-weight:600;}
+  .note p a:hover{color:var(--coral);border-color:var(--coral);}
+
+  footer{
+    background:var(--deep2);color:rgba(255,255,255,0.6);text-align:center;padding:40px 24px;font-size:12.5px;
+    font-family:"Space Grotesk";letter-spacing:0.04em;
+  }
+  footer b{color:#8FE0D6;}
+
+  @media(max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .glist,.checklist-grid{grid-template-columns:1fr;}
+    .navlinks{gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <div class="brand">MIYAKO<span>ISLAND</span> · 宮古島</div>
+    <div class="navlinks">
+      <a href="#overview">總覽</a>
+      <a href="#itinerary">每日行程</a>
+      <a href="#spots">景點地圖</a>
+      <a href="#expenses">花費總覽</a>
+      <a href="#packing">行前準備</a>
+      <a href="#notes">注意事項</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">MIYAKOJIMA · OKINAWA · HAPPY BIRTHDAY</div>
+    <h1>纓寶公主<br>宮古島生日之旅</h1>
+    <div class="sub">珊瑚礁與雪塩色的六天，租車環島追海，把最好的海島時光留給壽星公主。</div>
+    <div class="hero-meta">
+      <div class="pill">📅 <b>10/04 — 10/10</b></div>
+      <div class="pill">🌙 <b>6</b> 夜 7 天</div>
+      <div class="pill">🏨 <b>2</b> 間住宿</div>
+      <div class="pill">🚗 <b>全程一台車</b></div>
+      <div class="pill">👑 <b>纓寶公主</b>生日快樂</div>
+    </div>
+    <div class="tide">
+      <span class="tide-label">DAY 1 抵達</span>
+      <div class="tide-bar"></div>
+      <span class="tide-label">DAY 7 賦歸</span>
+    </div>
+  </div>
+</header>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Trip Overview</div>
+      <h2 class="sec-title">行程總覽</h2>
+      <p class="sec-desc">以宮古島本島希爾頓為起點，換宿到平良市區的 Hotel Locus，出境後直接租車，一台車開到最後一天還車，環繞本島與伊良部島，最後回機場賦歸。</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">天數（含首尾）</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">住宿地點</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">租車公司（全程）</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">已預約用餐 / 活動</div></div>
+    </div>
+    <div class="route">宮古島希爾頓 <span class="arrow">›</span> Hotel Locus（平良市區） <span class="arrow">›</span> 伊良部島環線 <span class="arrow">›</span> 東平安名崎 <span class="arrow">›</span> 下地島 <span class="arrow">›</span> 池間大橋 <span class="arrow">›</span> 機場賦歸</div>
+    <div class="diet-note">👑 <span><b>Happy Birthday!</b> 這趟旅程獻給纓寶公主，把海島最美的六天都收藏起來。</span></div>
+  </div>
+</section>
+
+<section id="itinerary" style="background:var(--sand2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Day by Day</div>
+      <h2 class="sec-title">每日行程</h2>
+      <p class="sec-desc">點擊切換每日行程，深藍色代表已完成／已預約，圓點代表尚待確認或現場決定的項目。</p>
+    </div>
+
+    <div class="daytabs" id="daytabs"></div>
+    <div id="daycards"></div>
+  </div>
+</section>
+
+<section id="spots">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">All Spots</div>
+      <h2 class="sec-title">景點地圖</h2>
+      <p class="sec-desc">依行程日期分區排列，點擊卡片直接開啟 Google 地圖導航。</p>
+    </div>
+    <div class="glist" id="spotgrid"></div>
+  </div>
+</section>
+
+<section id="expenses" style="background:var(--sand2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Trip Budget</div>
+      <h2 class="sec-title">花費總覽</h2>
+      <p class="sec-desc">已確認金額計入總計；租車、餐廳訂位費、活動費等待確認後會陸續補上。</p>
+    </div>
+
+    <div class="exp-summary">
+      <div class="exp-total">
+        <div class="l">目前已確認花費（分幣別）</div>
+        <div class="n" id="expTotal">—</div>
+        <div class="l" style="margin-top:8px;" id="expMerged"></div>
+      </div>
+      <span class="exp-pending" id="expPendingCount"></span>
+      <div class="exp-bar" id="expBar"></div>
+      <div class="exp-legend" id="expLegend"></div>
+    </div>
+
+    <div class="exp-table" id="expTable">
+      <div class="exp-row head"><div>類別</div><div>項目</div><div style="text-align:right;">金額 (NT$)</div><div style="text-align:right;">狀態</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="packing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Before You Go</div>
+      <h2 class="sec-title">行前準備</h2>
+      <p class="sec-desc">依類別整理，出發前逐項確認。</p>
+    </div>
+    <div class="checklist-grid" id="packgrid"></div>
+  </div>
+</section>
+
+<section id="notes" style="background:var(--sand2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Good to Know</div>
+      <h2 class="sec-title">注意事項</h2>
+      <p class="sec-desc">行程優化重點與提醒，出發前快速掃過一遍。</p>
+    </div>
+    <div class="notes" id="notesgrid"></div>
+  </div>
+</section>
+
+<footer>宮古の海，獻給纓寶公主的生日時光 · <b>10/04 — 10/10</b></footer>
+
+<script>
+/* ---------------- DATA ---------------- */
+const tideColors = ["#22B8AE","#1FA69B","#1C7C8C","#186B87","#145C74","#0E3A53","#0A2740"];
+
+const days = [
+  {
+    d:"DAY 1", date:"10/04（日）", title:"抵達・希爾頓入住", loc:"宮古島機場 → 宮古島希爾頓飯店",
+    items:[
+      {t:"13:00", b:'抵達宮古島機場（建議先線上完成 <a href="https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" target="_blank">Visit Japan Web</a> 投保登記）'},
+      {t:"14:00", b:'出境，租車取車已預約 · <a href="https://maps.app.goo.gl/3zryb9VwRY41TDCF9" target="_blank">レンタかりーる Miyakojima Rental Car</a>', booked:true, sub:'全程單一租車（10/04 14:00 － 10/10 11:30），自駕前往飯店'},
+      {t:"15:00", b:'宮古島希爾頓飯店 Check in，享用私人沙灘與飯店設施'},
+      {t:"17:30", b:'飯店晚餐（17:30–21:00）'},
+      {t:"18:00", b:'飯店酒吧（18:00–23:00）'},
+    ]
+  },
+  {
+    d:"DAY 2", date:"10/05（一）", title:"換宿平良市區・宮古牛燒肉", loc:"希爾頓 Check out → Hotel Locus Check in",
+    items:[
+      {t:"09:00", b:'飯店早餐'},
+      {t:"11:00", b:'宮古島希爾頓飯店 Check out'},
+      {t:"11:30", b:'景點 · <a href="https://maps.app.goo.gl/Qy5TLMA4nKXY6DwK6" target="_blank">Yonaha Beach</a>'},
+      {t:"12:00", b:'景點 · <a href="https://maps.app.goo.gl/zYCM2s8U8WgePkxL7" target="_blank">來間大橋</a>'},
+      {t:"12:30", b:'景點 · <a href="https://maps.app.goo.gl/8cQM1VfAdfw7FWhV6" target="_blank">龍宮城觀景台</a>'},
+      {t:"13:00", b:'午餐：<a href="https://maps.app.goo.gl/xfwmBsRgof9HbPBX7" target="_blank">PANIPANI</a> 或 <a href="https://maps.app.goo.gl/WMm7bRVuEcRZUb886" target="_blank">AOSORA PARLOR</a>'},
+      {t:"15:00", b:'HOTEL LOCUS Check in'},
+      {t:"15:30", b:'市區閒晃：雜貨屋、伴手禮店'},
+      {t:"17:00", b:'晚餐已預約 · <a href="https://maps.app.goo.gl/NNBZdx36Ue71MUaH9?g_st=ic" target="_blank">宮古牛焼肉 玉城</a><span class="tag book">已訂 #48XR4UKQMK</span>', booked:true},
+      {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJyfe7qvRT9DQR7sVKBcXJa1s" target="_blank">Bar THINK</a>'},
+    ]
+  },
+  {
+    d:"DAY 3", date:"10/06（二）", title:"伊良部大橋環線", loc:"自駕環線",
+    items:[
+      {t:"10:00", b:'活動已預約 · 海邊攝影', booked:true},
+      {t:"11:00", b:'景點 · <a href="https://maps.app.goo.gl/XYiEGd8x1Qzt8D1KA?g_st=ic" target="_blank">伊良部大橋</a>'},
+      {t:"11:30", b:'景點 · <a href="https://maps.app.goo.gl/N41GwySqfq4QRdcr8?g_st=ic" target="_blank">Irabu Bridge Sea Station 海の駅</a>'},
+      {t:"12:00", b:'午餐：<a href="https://maps.app.goo.gl/Xx1r9cfszqhu1opT9" target="_blank">Blue Turtle ブルータートル</a> 或 <a href="https://maps.app.goo.gl/zw1jT7AS3kVuWvqZ9" target="_blank">Yusarabi ゆさらび</a>（備選）'},
+      {t:"14:00", b:'景點 · <a href="https://maps.app.goo.gl/h8RSgvJmVAwZCbQw5?g_st=ic" target="_blank">渡口の浜 Toguchi Beach</a>'},
+      {t:"15:00", b:'咖啡廳 · <a href="https://maps.app.goo.gl/MPjYBKSZUwtsG79s5?g_st=ic" target="_blank">1 LAB Hello, VACAY!</a>'},
+      {t:"19:00", b:'晚餐 · <a href="https://maps.app.goo.gl/QpJ8W4zDBgkhoHrB9?g_st=ic" target="_blank">アパラギ姫63</a>'},
+      {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJBbGBIr9T9DQRvVQpxZPxXJw" target="_blank">果実家BAR</a>'},
+    ]
+  },
+  {
+    d:"DAY 4", date:"10/07（三）", title:"東平安名崎・展望台", loc:"自駕環線",
+    items:[
+      {t:"10:00", b:'景點 · <a href="https://maps.app.goo.gl/Hf4GXdUq8FGcY63c9?g_st=ic" target="_blank">The Shigira Lift Ocean Sky</a>（10:00–17:00）'},
+      {t:"12:00", b:'午餐：<a href="https://maps.app.goo.gl/PmzPz4hEKhvxmXN78?g_st=ic" target="_blank">まる家</a> 或 <a href="https://maps.app.goo.gl/36EF3QsJqgzaumPUA?g_st=ic" target="_blank">Shima Bistro TAJIYA</a>（備選）'},
+      {t:"13:00", b:'景點 · <a href="https://maps.app.goo.gl/SdBkiUUAVDQxCAB2A" target="_blank">インギャーマリンガーデン展望台</a> ／ <a href="https://maps.app.goo.gl/Pj1PSpkNFiDCjdjo6" target="_blank">Ingiya-bashi インギャー橋</a> ／ <a href="https://maps.app.goo.gl/Mj46nFgBDKANGTkr9" target="_blank">穆伊加斷崖 ムイガー断崖</a>'},
+      {t:"13:30", b:'冰品 · <a href="https://maps.app.goo.gl/9to8UW6bMQQddc316?g_st=ic" target="_blank">ぐるぐるめんや</a>'},
+      {t:"14:00", b:'景點 · <a href="https://maps.app.goo.gl/2i6SxqZyNciQtbXB6" target="_blank">Aragusuku Beach 新城海岸</a> ／ <a href="https://maps.app.goo.gl/yrDhR2XpM2YGvzHA8" target="_blank">Yoshino Kaigan Beach 吉野海岸</a>'},
+      {t:"15:00", b:'景點 · <a href="https://maps.app.goo.gl/wU6wvHLiN8nYVFkNA" target="_blank">東平安名崎</a>', sub:'⚠ 這段路程車距較遠，13:00–16:00 內排了多站，建議放寬時間或抽掉一站'},
+      {t:"16:00", b:'甜點 · <a href="https://maps.app.goo.gl/kn3jQSyPDw2RnoKo7?g_st=ic" target="_blank">Aragusuku Honeybee Garden</a>'},
+      {t:"19:00", b:'晚餐 · <a href="https://maps.app.goo.gl/ec1B5KoELnViQXe87" target="_blank">Restaurant TAKI レストランTAKI</a>'},
+      {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJA-BPIb9T9DQRKq7-GFUeZE0" target="_blank">The SECOND</a>'},
+    ]
+  },
+  {
+    d:"DAY 5", date:"10/08（四）", title:"下地島・通り池", loc:"下地島 → Grand Bleu Gamin 晚餐",
+    items:[
+      {t:"10:00", b:'景點 · <a href="https://maps.app.goo.gl/EBtbm4VNW3HKL9zQ6?g_st=ic" target="_blank">17 END Beach</a>'},
+      {t:"11:00", b:'景點 · <a href="https://maps.app.goo.gl/yNHCJHTa6sSJpQXx8?g_st=ic" target="_blank">通り池 下地島</a>'},
+      {t:"12:00", b:'午餐：<a href="https://maps.app.goo.gl/qzZB953LoojVnPfP6" target="_blank">Guest House&CAFE NaNa</a> 或 <a href="https://maps.app.goo.gl/k3sPw61xsKsJKU326" target="_blank">空と燻製と cafe ぷからす</a>'},
+      {t:"14:00", b:'景點 · <a href="https://maps.app.goo.gl/7FQhDXU2wgcgSeK48?g_st=ic" target="_blank">佐和田の浜</a>'},
+      {t:"15:00", b:'甜點 · <a href="https://maps.app.goo.gl/eo2Y8jKYNhexTBgD6?g_st=ic" target="_blank">なかゆくい商店</a>'},
+      {t:"16:00", b:'咖啡店 · <a href="https://maps.app.goo.gl/9s9Gkb6KJDJ1bBG28?g_st=ic" target="_blank">國仲商店</a>'},
+      {t:"19:00", b:'晚餐已預約 · <a href="https://maps.app.goo.gl/J4ksuSvDd7xxMzvGA?g_st=ic" target="_blank">Grand Bleu Gamin</a>', booked:true},
+      {t:"22:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJMW29rPRT9DQRow4crKqAad0" target="_blank">Bar&Cafe Pisara</a>', sub:'Gamin 是高質感 Fine Dining，接一間安靜隱密的 Bar 收尾'},
+    ]
+  },
+  {
+    d:"DAY 6", date:"10/09（五）", title:"優尼之濱・雪塩博物館", loc:"自駕環線",
+    items:[
+      {t:"10:00", b:'活動已預約 · <a href="https://maps.app.goo.gl/rNtmE8M2KamJUmYN6?g_st=ic" target="_blank">優尼之濱 ユニの浜</a>', booked:true},
+      {t:"12:00", b:'午餐：<a href="https://maps.app.goo.gl/BYmzahaKyeiWd5XA8?g_st=ic" target="_blank">HARRY\'S Shrimp Truck</a> + <a href="https://maps.app.goo.gl/8obe8sdTFkGrjD1u7" target="_blank">Cafe Irayoi</a>'},
+      {t:"12:30", b:'景點 · <a href="https://maps.app.goo.gl/KR11DeNz2b8StMGn7?g_st=ic" target="_blank">砂山ビーチ</a>'},
+      {t:"13:30", b:'咖啡廳 · <a href="https://maps.app.goo.gl/37fQsxWjF7i8oWPZA?g_st=ic" target="_blank">宮古きび茶屋</a>'},
+      {t:"14:30", b:'景點 · <a href="https://maps.app.goo.gl/FUXrd7zkk3zpBU6J8" target="_blank">雪塩博物館</a>'},
+      {t:"15:30", b:'景點 · <a href="https://maps.app.goo.gl/FxdaEFqLftpJKb727" target="_blank">池間大橋狩俣停車場</a>'},
+      {t:"16:00", b:'甜點 · <a href="https://maps.app.goo.gl/UcKseBcUqFhhJumf9" target="_blank">Kaimiru 海美来 紅芋もち</a>'},
+      {t:"16:30", b:'甜點 · <a href="https://maps.app.goo.gl/Z5DpfvcUkYuYwLYU8?g_st=ic" target="_blank">gelato Cafe Ninufa</a>'},
+      {t:"19:00", b:'晚餐已預約 · <a href="https://maps.app.goo.gl/mzFrt3dMKJ1cP8S1A?g_st=ic" target="_blank">酒場テノワヤ</a>', booked:true},
+      {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJTaXkVhpT9DQRUNyRtxcatYE" target="_blank">bar Banian</a>', sub:'離 Hotel Locus 極近，喝完直接走回飯店，最後一晚收尾'},
+    ]
+  },
+  {
+    d:"DAY 7", date:"10/10（六）", title:"賦歸", loc:"Hotel Locus → 機場",
+    items:[
+      {t:"11:00", b:'Check out'},
+      {t:"11:30", b:'租車還車 · <a href="https://maps.app.goo.gl/3zryb9VwRY41TDCF9" target="_blank">レンタかりーる Miyakojima Rental Car</a>', booked:true},
+      {t:"12:00", b:'抵達機場'},
+      {t:"14:00", b:'班機起飛'},
+    ]
+  },
+];
+
+const expenses = [
+  {cat:"機票", item:"來回機票", amt:23916, cur:"TWD", status:"confirmed", color:"#22B8AE"},
+  {cat:"住宿", item:"宮古島希爾頓飯店", amt:19028, cur:"TWD", status:"confirmed", color:"#1C7C8C"},
+  {cat:"住宿", item:"Hotel Locus", amt:17934, cur:"TWD", status:"confirmed", color:"#145C74"},
+  {cat:"租車", item:"レンタかりーる Miyakojima Rental Car（全程 10/04–10/10）", amt:30000, cur:"JPY", status:"confirmed", color:"#0E3A53"},
+  {cat:"餐廳訂位", item:"宮古牛焼肉 玉城", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
+  {cat:"餐廳訂位", item:"アパラギ姫63", amt:30400, cur:"JPY", status:"confirmed", color:"#FF6B4A"},
+  {cat:"餐廳訂位", item:"Grand Bleu Gamin", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
+  {cat:"活動", item:"海邊攝影（Day3）", amt:19800, cur:"JPY", status:"confirmed", color:"#B4790A"},
+  {cat:"活動", item:"優尼之濱（Day6）", amt:14000, cur:"JPY", status:"confirmed", color:"#B4790A"},
+];
+
+const packing = [
+  {title:"📑 證件與資訊", items:["護照＋Visit Japan Web 線上投保紀錄","國際駕照＋台灣駕照正本（租車必備）","飯店 / 租車 / 餐廳訂單截圖或紙本","信用卡＋少量日幣現金"]},
+  {title:"🔌 電子與通訊", items:["手機、充電線、行動電源","日本上網 SIM 卡／eSIM","日規電源轉接頭（若需要）","車用手機架（自駕導航用）"]},
+  {title:"🏖 衣物與海邊裝備", items:["防曬外套與帽子（10 月仍高溫多紫外線）","泳衣＋快乾毛巾","水鞋或涼鞋（下海景點多）","薄長袖（部分餐廳、酒吧冷氣較強）"]},
+  {title:"💊 盥洗與醫藥包", items:["防曬乳、曬後修復","暈車藥（環島租車路段多彎道）","個人常備藥品","防蚊液"]},
+];
+
+const notes = [
+  {ico:"⚠", warn:true, title:"Day 4 下午較緊湊", text:"13:00–17:00 內安排 5 站，東平安名崎在最東側車程較長，建議放寬時間或移除一站甜點/冰品。"},
+  {ico:"⛽", title:"還車前加滿油", text:'全程一台車，中途不用特地跑加油站，10/10 還車前（11:30 前）到 <a href="https://maps.app.goo.gl/QQe6hpjaDrTBAd1KA?g_st=ic" target="_blank">ENEOS 宮古給油所</a> 加滿油即可，避免被收滿油費差額。'},
+  {ico:"🚗", title:"已改為全程單一租車", text:"改為出境後直接在 レンタかりーる Miyakojima Rental Car 取車，10/04 14:00 取車、10/10 11:30 還車，免去中途兩次還車／取車的手續，動線更順。"},
+  {ico:"🎂", title:"生日驚喜留意", text:"若想安排生日驚喜（蛋糕、氣球、飯店留言），建議提早跟希爾頓或 Hotel Locus 客房服務聯繫確認可否協助。"},
+  {ico:"🌀", title:"10 月仍是颱風季尾聲", text:"海邊攝影、優尼之濱、通り池等行程靠天氣，建議出發前 3–5 天密切關注颱風動態，並準備雨天備案。"},
+  {ico:"📝", title:"Visit Japan Web 提早填", text:"建議出發前就先完成投保登記，避免抵達機場 13:00 後才臨時處理，排隊耗時。"},
+];
+
+/* ---------------- RENDER ---------------- */
+const tabsEl = document.getElementById('daytabs');
+const cardsEl = document.getElementById('daycards');
+
+days.forEach((day, i) => {
+  const tab = document.createElement('div');
+  tab.className = 'daytab' + (i===0 ? ' active' : '');
+  tab.style.background = i===0 ? tideColors[i] : '';
+  tab.innerHTML = `${day.d}<span class="d">${day.date.slice(0,5)}</span>`;
+  tab.onclick = () => selectDay(i);
+  tabsEl.appendChild(tab);
+
+  const card = document.createElement('div');
+  card.className = 'daycard' + (i===0 ? ' active' : '');
+  card.innerHTML = `
+    <div class="day-head">
+      <div class="day-num" style="background:${tideColors[i]}">${day.d}</div>
+      <div class="day-title">${day.title}</div>
+      <div class="day-date">${day.date}</div>
+    </div>
+    <div class="day-loc">📍 ${day.loc}</div>
+    <div class="timeline">
+      ${day.items.map(it => `
+        <div class="tl-item${it.booked ? ' booked':''}">
+          <div class="tl-time">${it.t}</div>
+          <div class="tl-body">${it.b}</div>
+          ${it.sub ? `<div class="tl-sub">${it.sub}</div>` : ''}
+        </div>
+      `).join('')}
+    </div>
+  `;
+  cardsEl.appendChild(card);
+});
+
+function selectDay(i){
+  document.querySelectorAll('.daytab').forEach((el,idx)=>{
+    el.classList.toggle('active', idx===i);
+    el.style.background = idx===i ? tideColors[idx] : '';
+  });
+  document.querySelectorAll('.daycard').forEach((el,idx)=>{
+    el.classList.toggle('active', idx===i);
+  });
+}
+
+/* spots grid — reuse links already in the day items that have maps.app.goo.gl */
+const spotgrid = document.getElementById('spotgrid');
+days.forEach((day,i)=>{
+  const linkMatches = [];
+  day.items.forEach(it=>{
+    const re = /<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g;
+    let m;
+    while((m = re.exec(it.b)) !== null){ linkMatches.push({url:m[1], name:m[2]}); }
+  });
+  if(linkMatches.length === 0) return;
+  const el = document.createElement('div');
+  el.className = 'gday';
+  el.innerHTML = `<h4>${day.d} · ${day.title}　${day.date}</h4>
+    <div class="glinks">${linkMatches.map(l=>`<a href="${l.url}" target="_blank">📍 ${l.name}</a>`).join('')}</div>`;
+  spotgrid.appendChild(el);
+});
+
+/* expenses */
+const confirmedExp = expenses.filter(e => e.status === 'confirmed');
+const pendingExp = expenses.filter(e => e.status === 'pending');
+const totalsByCur = {};
+confirmedExp.forEach(e => { totalsByCur[e.cur] = (totalsByCur[e.cur]||0) + e.amt; });
+const curSymbol = {TWD:'NT$', JPY:'¥'};
+
+document.getElementById('expTotal').innerHTML = Object.keys(totalsByCur).map(cur =>
+  `${curSymbol[cur]} ${totalsByCur[cur].toLocaleString()}`
+).join('　+　');
+
+// merged TWD estimate (JPY converted at approx market rate)
+const JPY_TO_TWD = 0.204; // 概算匯率，實際入帳以刷卡/換匯當下匯率為準
+const twdFromJpy = Math.round((totalsByCur.JPY || 0) * JPY_TO_TWD);
+const mergedTotal = (totalsByCur.TWD || 0) + twdFromJpy;
+document.getElementById('expMerged').innerHTML =
+  `合併估算（¥1 ≈ NT$${JPY_TO_TWD}）：約 <b style="color:var(--deep);font-family:'Space Grotesk';">NT$ ${mergedTotal.toLocaleString()}</b>`;
+
+document.getElementById('expPendingCount').textContent = pendingExp.length + ' 項待確認';
+
+// bar: proportion by confirmed category totals, normalized within each currency then stacked by count
+const byCat = {};
+confirmedExp.forEach(e => { byCat[e.cat] = (byCat[e.cat]||0) + 1; });
+const catColors = {};
+expenses.forEach(e => { if(!catColors[e.cat]) catColors[e.cat] = e.color; });
+const totalItems = confirmedExp.length;
+
+const expBar = document.getElementById('expBar');
+Object.keys(byCat).forEach(cat => {
+  const pct = (byCat[cat] / totalItems * 100).toFixed(1);
+  const seg = document.createElement('span');
+  seg.style.width = pct + '%';
+  seg.style.background = catColors[cat];
+  seg.title = cat;
+  expBar.appendChild(seg);
+});
+
+const expLegend = document.getElementById('expLegend');
+Object.keys(catColors).forEach(cat => {
+  const items = expenses.filter(e => e.cat === cat && e.status === 'confirmed');
+  if(items.length === 0) return;
+  const byCurSum = {};
+  items.forEach(e => { byCurSum[e.cur] = (byCurSum[e.cur]||0) + e.amt; });
+  const sumText = Object.keys(byCurSum).map(cur => `${curSymbol[cur]}${byCurSum[cur].toLocaleString()}`).join(' + ');
+  const li = document.createElement('div');
+  li.className = 'li';
+  li.innerHTML = `<span class="dot" style="background:${catColors[cat]}"></span>${cat} · ${sumText}`;
+  expLegend.appendChild(li);
+});
+
+const expTable = document.getElementById('expTable');
+expenses.forEach(e => {
+  const row = document.createElement('div');
+  row.className = 'exp-row';
+  row.innerHTML = `
+    <div class="exp-cat">${e.cat}</div>
+    <div class="exp-item">${e.item}</div>
+    <div class="exp-amt${e.amt===null ? ' pending':''}">${e.amt===null ? '待確認' : curSymbol[e.cur]+' '+e.amt.toLocaleString()}</div>
+    <div class="exp-status ${e.status}">${e.status==='confirmed' ? '已確認':'待確認'}</div>
+  `;
+  expTable.appendChild(row);
+});
+
+/* packing */
+const packgrid = document.getElementById('packgrid');
+packing.forEach(g=>{
+  const el = document.createElement('div');
+  el.className = 'cl-group';
+  el.innerHTML = `<h4>${g.title}</h4><ul>${g.items.map(it=>`<li>${it}</li>`).join('')}</ul>`;
+  packgrid.appendChild(el);
+});
+
+/* notes */
+const notesgrid = document.getElementById('notesgrid');
+notes.forEach(n=>{
+  const el = document.createElement('div');
+  el.className = 'note' + (n.warn ? ' warn' : '');
+  el.innerHTML = `<div class="n-ico">${n.ico}</div><div><h5>${n.title}</h5><p>${n.text}</p></div>`;
+  notesgrid.appendChild(el);
+});
+</script>
+</body>
+</html>
