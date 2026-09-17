@@ -286,7 +286,7 @@
       <div class="stat"><div class="n">7</div><div class="l">天數（含首尾）</div></div>
       <div class="stat"><div class="n">2</div><div class="l">住宿地點</div></div>
       <div class="stat"><div class="n">1</div><div class="l">租車公司（全程）</div></div>
-      <div class="stat"><div class="n">4</div><div class="l">已預約用餐 / 活動</div></div>
+      <div class="stat"><div class="n" id="bookedCount">—</div><div class="l">已預約用餐 / 活動</div></div>
     </div>
     <div class="route">宮古島希爾頓 <span class="arrow">›</span> Hotel Locus（平良市區） <span class="arrow">›</span> 伊良部島環線 <span class="arrow">›</span> 東平安名崎 <span class="arrow">›</span> 下地島 <span class="arrow">›</span> 池間大橋 <span class="arrow">›</span> 機場賦歸</div>
     <div class="diet-note">👑 <span><b>Happy Birthday!</b> 這趟旅程獻給纓寶公主，把海島最美的六天都收藏起來。</span></div>
@@ -405,7 +405,7 @@ const days = [
       {t:"12:00", b:'午餐：<a href="https://maps.app.goo.gl/Xx1r9cfszqhu1opT9" target="_blank">Blue Turtle ブルータートル</a> 或 <a href="https://maps.app.goo.gl/zw1jT7AS3kVuWvqZ9" target="_blank">Yusarabi ゆさらび</a>（備選）'},
       {t:"14:00", b:'景點 · <a href="https://maps.app.goo.gl/h8RSgvJmVAwZCbQw5?g_st=ic" target="_blank">渡口の浜 Toguchi Beach</a>'},
       {t:"15:00", b:'咖啡廳 · <a href="https://maps.app.goo.gl/MPjYBKSZUwtsG79s5?g_st=ic" target="_blank">1 LAB Hello, VACAY!</a>'},
-      {t:"19:00", b:'晚餐 · <a href="https://maps.app.goo.gl/QpJ8W4zDBgkhoHrB9?g_st=ic" target="_blank">アパラギ姫63</a>'},
+      {t:"19:00", b:'晚餐已預約 · <a href="https://maps.app.goo.gl/QpJ8W4zDBgkhoHrB9?g_st=ic" target="_blank">アパラギ姫63</a>', booked:true},
       {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJBbGBIr9T9DQRvVQpxZPxXJw" target="_blank">果実家BAR</a>'},
     ]
   },
@@ -419,7 +419,7 @@ const days = [
       {t:"14:00", b:'景點 · <a href="https://maps.app.goo.gl/2i6SxqZyNciQtbXB6" target="_blank">Aragusuku Beach 新城海岸</a> ／ <a href="https://maps.app.goo.gl/yrDhR2XpM2YGvzHA8" target="_blank">Yoshino Kaigan Beach 吉野海岸</a>'},
       {t:"15:00", b:'景點 · <a href="https://maps.app.goo.gl/wU6wvHLiN8nYVFkNA" target="_blank">東平安名崎</a>', sub:'⚠ 這段路程車距較遠，13:00–16:00 內排了多站，建議放寬時間或抽掉一站'},
       {t:"16:00", b:'甜點 · <a href="https://maps.app.goo.gl/kn3jQSyPDw2RnoKo7?g_st=ic" target="_blank">Aragusuku Honeybee Garden</a>'},
-      {t:"19:00", b:'晚餐 · <a href="https://maps.app.goo.gl/ec1B5KoELnViQXe87" target="_blank">Restaurant TAKI レストランTAKI</a>'},
+      {t:"19:00", b:'晚餐已預約 · <a href="https://maps.app.goo.gl/ec1B5KoELnViQXe87" target="_blank">Restaurant TAKI レストランTAKI</a>', booked:true},
       {t:"21:00", b:'酒吧 · <a href="https://www.google.com/maps/place/?q=place_id:ChIJA-BPIb9T9DQRKq7-GFUeZE0" target="_blank">The SECOND</a>'},
     ]
   },
@@ -469,23 +469,22 @@ const expenses = [
   {cat:"租車", item:"レンタかりーる Miyakojima Rental Car（全程 10/04–10/10）", amt:30000, cur:"JPY", status:"confirmed", color:"#0E3A53"},
   {cat:"餐廳訂位", item:"宮古牛焼肉 玉城", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
   {cat:"餐廳訂位", item:"アパラギ姫63", amt:30400, cur:"JPY", status:"confirmed", color:"#FF6B4A"},
+  {cat:"餐廳訂位", item:"Restaurant TAKI", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
   {cat:"餐廳訂位", item:"Grand Bleu Gamin", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
+  {cat:"餐廳訂位", item:"酒場テノワヤ", amt:null, cur:"JPY", status:"pending", color:"#FF6B4A"},
   {cat:"活動", item:"海邊攝影（Day3）", amt:19800, cur:"JPY", status:"confirmed", color:"#B4790A"},
   {cat:"活動", item:"優尼之濱（Day6）", amt:14000, cur:"JPY", status:"confirmed", color:"#B4790A"},
 ];
 
 const packing = [
-  {title:"📑 證件與資訊", items:["護照＋Visit Japan Web 線上投保紀錄","國際駕照＋台灣駕照正本（租車必備）","飯店 / 租車 / 餐廳訂單截圖或紙本","信用卡＋少量日幣現金"]},
+  {title:"📑 證件與資訊", items:["護照＋Visit Japan Web 線上投保紀錄","台灣駕照正本＋日文譯本正本（租車必備）","飯店 / 租車 / 餐廳訂單截圖或紙本","信用卡＋少量日幣現金"]},
   {title:"🔌 電子與通訊", items:["手機、充電線、行動電源","日本上網 SIM 卡／eSIM","日規電源轉接頭（若需要）","車用手機架（自駕導航用）"]},
   {title:"🏖 衣物與海邊裝備", items:["防曬外套與帽子（10 月仍高溫多紫外線）","泳衣＋快乾毛巾","水鞋或涼鞋（下海景點多）","薄長袖（部分餐廳、酒吧冷氣較強）"]},
   {title:"💊 盥洗與醫藥包", items:["防曬乳、曬後修復","暈車藥（環島租車路段多彎道）","個人常備藥品","防蚊液"]},
 ];
 
 const notes = [
-  {ico:"⚠", warn:true, title:"Day 4 下午較緊湊", text:"13:00–17:00 內安排 5 站，東平安名崎在最東側車程較長，建議放寬時間或移除一站甜點/冰品。"},
   {ico:"⛽", title:"還車前加滿油", text:'全程一台車，中途不用特地跑加油站，10/10 還車前（11:30 前）到 <a href="https://maps.app.goo.gl/QQe6hpjaDrTBAd1KA?g_st=ic" target="_blank">ENEOS 宮古給油所</a> 加滿油即可，避免被收滿油費差額。'},
-  {ico:"🚗", title:"已改為全程單一租車", text:"改為出境後直接在 レンタかりーる Miyakojima Rental Car 取車，10/04 14:00 取車、10/10 11:30 還車，免去中途兩次還車／取車的手續，動線更順。"},
-  {ico:"🎂", title:"生日驚喜留意", text:"若想安排生日驚喜（蛋糕、氣球、飯店留言），建議提早跟希爾頓或 Hotel Locus 客房服務聯繫確認可否協助。"},
   {ico:"🌀", title:"10 月仍是颱風季尾聲", text:"海邊攝影、優尼之濱、通り池等行程靠天氣，建議出發前 3–5 天密切關注颱風動態，並準備雨天備案。"},
   {ico:"📝", title:"Visit Japan Web 提早填", text:"建議出發前就先完成投保登記，避免抵達機場 13:00 後才臨時處理，排隊耗時。"},
 ];
@@ -523,6 +522,9 @@ days.forEach((day, i) => {
   `;
   cardsEl.appendChild(card);
 });
+
+const bookedCount = days.reduce((sum, day) => sum + day.items.filter(it => it.booked).length, 0);
+document.getElementById('bookedCount').textContent = bookedCount;
 
 function selectDay(i){
   document.querySelectorAll('.daytab').forEach((el,idx)=>{
